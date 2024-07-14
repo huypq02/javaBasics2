@@ -22,7 +22,7 @@ public class bai1 {
         }
 
         int maxYear = utils.smallest(bodList);
-        System.out.println("Sinh nam tre nhat " + maxYear);
+        System.out.println("Nam sinh tre nhat " + maxYear);
 
         System.out.println("Danh sach sinh vien tre nhat la");
         for(int i = 0; i < nameList.length; i++){
