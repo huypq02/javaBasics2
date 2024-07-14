@@ -1,5 +1,7 @@
 package vn.edu.cybersoft.pkg;
 
+import java.util.Calendar;
+
 public class utils {
     public static boolean isEven(int num){
         return (num%2) == 0;
@@ -27,5 +29,11 @@ public class utils {
 
     public static boolean duplicated(int value, int expectedValue){
         return value == expectedValue;
+    }
+
+    public static boolean isGreaterThanCurrentDate(int year) {
+        Calendar calendar = Calendar.getInstance();
+        int dayOfYear = calendar.get(Calendar.YEAR);
+        return year > dayOfYear;
     }
 }
