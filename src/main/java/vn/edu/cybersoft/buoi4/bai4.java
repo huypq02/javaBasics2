@@ -21,7 +21,7 @@ public class bai4 {
             double x = sc1.nextDouble();
             System.out.printf("Nhap tung do (Oy) toa do hs %d\n", i+1);
             double y = sc1.nextDouble();
-            studentCoordinateList[i] = Double.toString(x)+';'+Double.toString(y);
+            studentCoordinateList[i] = Double.toString(x)+';'+ y;
             System.out.printf("=> Toa do nha cua hs %d la: (%s)\n", i+1, studentCoordinateList[i]);
         }
 

@@ -18,6 +18,10 @@ public class bai1 {
             nameList[i] = name;
             System.out.printf("Nhap nam sinh hs %d ", i+1);
             int bod = sc1.nextInt();
+            if (utils.isGreaterThanCurrentDate(bod)) {
+                System.out.printf("Nam sinh hs %d khong duoc lon hon hien tai\n", i+1);
+                return;
+            }
             bodList[i] = bod;
         }
 
