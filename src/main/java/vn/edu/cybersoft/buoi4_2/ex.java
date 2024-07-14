@@ -36,16 +36,30 @@ public class ex {
             totalAmount += discount8percent(amount, number);
         }
 
+        if (number <= MAX_NUMBER_NO_DISCOUNT){
+            totalAmount = noDiscount(amount, number);
+        }
+
         System.out.printf("So tien phai tra: %2f VND\n", totalAmount);
     }
 
     private static double discount12percent(double amount, int number){
-        return (number-MAX_NUMBER_DISCOUNT_LV1)*amount*12/100;
+        // so luong tren 100 thi so luong tu 100 tro di se giam 12%
+        // nghia la neu so luong san pham la 101 thi co 2 san pham thu 100 va thu 101 se duoc giam 12%
+        return (number-MAX_NUMBER_DISCOUNT_LV1+1)*amount*12/100;
     }
 
     private static double discount8percent(double amount, int number){
+        // neu so luong tren 100 thi chi giam gia 8% cho 99 san pham, san pham con lai giam 12%
         if (number > MAX_NUMBER_DISCOUNT_LV1)
-            return MAX_NUMBER_DISCOUNT_LV1*amount*8/100;
+            return (MAX_NUMBER_DISCOUNT_LV1-1)*amount*8/100;
+        // so luong tu 50 den 100 se duoc giam 8%
+        // nghia la neu so luong san pham la 100 thi 100 san pham do duoc giam 8%
         return number*amount*8/100;
+    }
+
+    private static double noDiscount(double amount, int number){
+        // so luong duoi 50 tuc so luong tu 0 den 49 se khong co giam gia
+        return number*amount;
     }
 }
